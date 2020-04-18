@@ -1,0 +1,30 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es2019",
+    "rootDir": "src",
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "declaration": false,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "downlevelIteration": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": true,
+    "strictNullChecks": true,
+    "strictBindCallApply": true,
+    "stripInternal": true,
+    "importHelpers": true,
+    "lib": [
+      "esnext",
+      "dom"
+    ]
+  },
+  "include": [
+    "src"
+  ]
+}

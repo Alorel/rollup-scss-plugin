@@ -1,0 +1,72 @@
+name: Master Build
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+        node:
+          - 13.x
+          - 12.x
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 100
+      - name: Cache yarn
+        uses: actions/cache@v1
+        with:
+          key: ${{ matrix.os }}-${{ matrix.node }}-yarn
+          path: .yarn/cache
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          key: ${{ matrix.os }}-${{ matrix.node }}-node_modules
+          path: node_modules
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+          registry-url: https://npm.pkg.github.com/
+      - run: npm install -g yarn@^2.0.0-rc.27
+      - run: yarn install --immutable
+        env:
+          YARN_ENABLE_GLOBAL_CACHE: 'false'
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: yarn run lint
+        if: ${{ matrix.node == '13.x' && matrix.os == 'ubuntu-latest'}}
+
+  release:
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 100
+      - name: Cache yarn
+        uses: actions/cache@v1
+        with:
+          key: ubuntu-latest-13.x-${{ github.ref }}-yarn
+          path: .yarn/cache
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          key: ubuntu-latest-13.x-${{ github.ref }}-node_modules
+          path: node_modules
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 13.x
+          registry-url: https://npm.pkg.github.com/
+      - run: npm install -g yarn@^2.0.0-rc.27
+      - run: yarn install --immutable
+        env:
+          YARN_ENABLE_GLOBAL_CACHE: 'false'
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: semantic-release
