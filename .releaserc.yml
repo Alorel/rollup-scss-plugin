@@ -16,9 +16,6 @@ prepare:
       - README.md
       - package.json
       - yarn.lock
-      - .yarn/build-state.yml
-      - .yarn/install-state.gz
-      - .yarn/releases
   - path: &exec '@semantic-release/exec'
     cmd: yarn run rollup
 
