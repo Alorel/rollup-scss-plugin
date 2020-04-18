@@ -23,17 +23,17 @@ jobs:
       - name: Cache yarn
         uses: actions/cache@v1
         with:
-          key: ${{ matrix.os }}-${{ matrix.node }}-${{ github.ref }}-yarn
+          key: v2-${{ matrix.os }}-${{ matrix.node }}-${{ github.ref }}-yarn
           path: .yarn/cache
           restore-keys: |
-            ${{ matrix.os }}-${{ matrix.node }}-refs/heads/master-yarn
+            v2-${{ matrix.os }}-${{ matrix.node }}-refs/heads/master-yarn
       - name: Cache node_modules
         uses: actions/cache@v1
         with:
-          key: ${{ matrix.os }}-${{ matrix.node }}-${{ github.ref }}-node_modules
+          key: v2-${{ matrix.os }}-${{ matrix.node }}-${{ github.ref }}-node_modules
           path: node_modules
           restore-keys: |
-            ${{ matrix.os }}-${{ matrix.node }}-refs/heads/master-node_modules
+            v2-${{ matrix.os }}-${{ matrix.node }}-refs/heads/master-node_modules
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
