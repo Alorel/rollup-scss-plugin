@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/Alorel/rollup-scss-plugin/compare/1.0.2...1.0.3) (2020-04-18)
+
+
+### Performance Improvements
+
+* tweak default include pattern (II) ([](https://github.com/Alorel/rollup-scss-plugin/commit/70b8b9b9cf99dadb56d6a52dd9ec64a5bc3e4399))
+
 ## [1.0.2](https://github.com/Alorel/rollup-scss-plugin/compare/1.0.1...1.0.2) (2020-04-18)
 
 
