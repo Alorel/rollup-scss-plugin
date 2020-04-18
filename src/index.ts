@@ -23,7 +23,7 @@ export interface RollupSassHook extends Omit<Plugin, 'name'> {
 
 export function sassPlugin(opts?: RollupSassOptions): RollupSassHook {
   const {
-    include = '*.{scss,sass}',
+    include = /\.s[ac]ss$/,
     exclude,
     sassOpts = {}
   } = opts || {};
