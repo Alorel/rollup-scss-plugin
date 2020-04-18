@@ -23,12 +23,12 @@ jobs:
       - name: Cache yarn
         uses: actions/cache@v1
         with:
-          key: ${{ matrix.os }}-${{ matrix.node }}-${{ github.ref }}-yarn
+          key: v2-${{ matrix.os }}-${{ matrix.node }}-${{ github.ref }}-yarn
           path: .yarn/cache
       - name: Cache node_modules
         uses: actions/cache@v1
         with:
-          key: ${{ matrix.os }}-${{ matrix.node }}-${{ github.ref }}-node_modules
+          key: v2-${{ matrix.os }}-${{ matrix.node }}-${{ github.ref }}-node_modules
           path: node_modules
       - uses: actions/setup-node@v1
         with:
@@ -53,12 +53,12 @@ jobs:
       - name: Cache yarn
         uses: actions/cache@v1
         with:
-          key: ubuntu-latest-13.x-${{ github.ref }}-yarn
+          key: v2-ubuntu-latest-13.x-${{ github.ref }}-yarn
           path: .yarn/cache
       - name: Cache node_modules
         uses: actions/cache@v1
         with:
-          key: ubuntu-latest-13.x-${{ github.ref }}-node_modules
+          key: v2-ubuntu-latest-13.x-${{ github.ref }}-node_modules
           path: node_modules
       - uses: actions/setup-node@v1
         with:
