@@ -26,9 +26,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@alorel/rollup-css-plugin@workspace:.":
+"@alorel/rollup-plugin-scss@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@alorel/rollup-css-plugin@workspace:."
+  resolution: "@alorel/rollup-plugin-scss@workspace:."
   dependencies:
     "@alorel-personal/conventional-changelog-alorel": ^2.1.2
     "@alorel-personal/tslint-rules": ^5.0.7
