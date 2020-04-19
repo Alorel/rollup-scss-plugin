@@ -2,9 +2,9 @@ import typescript from '@rollup/plugin-typescript';
 import {join} from 'path';
 import {dependencies, peerDependencies} from './package.json';
 import {cleanPlugin} from '@alorel/rollup-plugin-clean';
-import copyPkgJson from './build/copy-pkg-json';
+import {copyPkgJsonPlugin as copyPkgJson} from '@alorel/rollup-plugin-copy-pkg-json';
 import {dtsPlugin as dts} from '@alorel/rollup-plugin-dts';
-import cpPlugin from './build/copy-plugin';
+import {copyPlugin as cpPlugin} from '@alorel/rollup-plugin-copy';
 
 function mkOutput(overrides = {}) {
   return {
@@ -29,15 +29,10 @@ export default {
       entryFileNames: '[name].cjs.js',
       format: 'cjs',
       plugins: [
-        copyPkgJson(),
-        dts(),
-        cpPlugin({
-          files: [
-            'LICENSE',
-            'CHANGELOG.md',
-            'README.md'
-          ]
-        })
+        copyPkgJson({
+          unsetPaths: ['devDependencies', 'scripts']
+        }),
+        dts()
       ]
     }),
     mkOutput({
@@ -54,6 +49,19 @@ export default {
     }),
     typescript({
       tsconfig: join(__dirname, 'tsconfig.json')
+    }),
+    cpPlugin({
+      defaultOpts: {
+        glob: {
+          cwd: __dirname
+        },
+        emitNameKind: 'fileName'
+      },
+      copy: [
+        'LICENSE',
+        'CHANGELOG.md',
+        'README.md'
+      ]
     })
   ]
 }

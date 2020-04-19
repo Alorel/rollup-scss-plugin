@@ -37,15 +37,38 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@alorel/rollup-plugin-dts@npm:^1.0.0":
+"@alorel/rollup-plugin-copy-pkg-json@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@alorel/rollup-plugin-copy-pkg-json@npm:1.0.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40alorel%2Frollup-plugin-copy-pkg-json%2F1.0.2%2F580a4cfb130b0f622a6cb6e25a267885f4857b8b8df9f7f6ce52008c727d5908"
+  dependencies:
+    lodash: ^4.17.15
+  peerDependencies:
+    rollup: ^2.6.0 || ^1.30.0
+  checksum: 2/7c3039dd26c5413c70fab20c2e133ac6ba6bcace8bee7816dcb8571a86ef81ed69ec379452938054a0e3377e69d6bb4a0ca81b45cf26dd779315ffbae190fffd
+  languageName: node
+  linkType: hard
+
+"@alorel/rollup-plugin-copy@npm:^1.0.0":
   version: 1.0.0
-  resolution: "@alorel/rollup-plugin-dts@npm:1.0.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40alorel%2Frollup-plugin-dts%2F1.0.0%2F3a5b7389845dce50890eb9d112b5d2bc2a134ccad5d13a5a6dc46327e0af0a83"
+  resolution: "@alorel/rollup-plugin-copy@npm:1.0.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40alorel%2Frollup-plugin-copy%2F1.0.0%2F4f0b9bc9a86e5cc6361e233e9b67cf22076d37d6b6b9bcb3bd302bb2342da6b2"
+  dependencies:
+    "@types/glob": ^7.1.1
+    glob: ^7.1.6
+  peerDependencies:
+    rollup: ^2.6.0 || ^1.30.0
+  checksum: 2/54455743db2f42e058516051a427650472b8af49860b65f8c5f24458737dd1f1731e910bdeb49cafa439d03f5582396075d010eac5f504038e1d667281bd1119
+  languageName: node
+  linkType: hard
+
+"@alorel/rollup-plugin-dts@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@alorel/rollup-plugin-dts@npm:1.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40alorel%2Frollup-plugin-dts%2F1.1.0%2Fcb207575a9d47242a01d9ec291a36caa910d3fc9160d1cdfda60fcbc5e224b77"
   dependencies:
     "@rollup/pluginutils": ^3.0.9
   peerDependencies:
     rollup: ^2.6.0 || ^1.30.0
     typescript: ^3.5.0
-  checksum: 2/0b23ee0a4b4d05284a3219bbea14656f34c2a138cce802e5218fa8facbd93ed699cf54d8eb40d9fb257c8372bda860cf31e9067ff1282ea1a0eff47a09bc1d64
+  checksum: 2/c7ca3c9f912f715d89c53b6778e0d7a19e31d90297ad8912fe534ba5ff0ff53075e6b50350a8a35d33e42aceb7c2a30bfbba107172940d1eae8823b1e928e239
   languageName: node
   linkType: hard
 
@@ -56,7 +79,9 @@ __metadata:
     "@alorel-personal/conventional-changelog-alorel": ^2.1.2
     "@alorel-personal/tslint-rules": ^5.0.7
     "@alorel/rollup-plugin-clean": ^1.0.0
-    "@alorel/rollup-plugin-dts": ^1.0.0
+    "@alorel/rollup-plugin-copy": ^1.0.0
+    "@alorel/rollup-plugin-copy-pkg-json": ^1.0.2
+    "@alorel/rollup-plugin-dts": ^1.1.0
     "@rollup/plugin-typescript": ^4.1.1
     "@rollup/pluginutils": ^3.0.9
     "@semantic-release/changelog": ^5.0.1
