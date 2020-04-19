@@ -26,6 +26,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@alorel/rollup-plugin-clean@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@alorel/rollup-plugin-clean@npm:1.0.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40alorel%2Frollup-plugin-clean%2F1.0.0%2Fd8e14c22c834f69bde7498aea3f9292a9bb6f5b19bd236d5afafe74807e16b1d"
+  dependencies:
+    del: ^5.1.0
+  peerDependencies:
+    rollup: ^2.6.0 || ^1.30.0
+  checksum: 2/e328f299fa469489f3772bfb0ceea37189fef6987e37b6cc7a6bb587b1af05d5197d88d98a3fe6e5508f75ccb236369b429719be8b4fde25cecca307b084101f
+  languageName: node
+  linkType: hard
+
 "@alorel/rollup-plugin-dts@npm:^1.0.0":
   version: 1.0.0
   resolution: "@alorel/rollup-plugin-dts@npm:1.0.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40alorel%2Frollup-plugin-dts%2F1.0.0%2F3a5b7389845dce50890eb9d112b5d2bc2a134ccad5d13a5a6dc46327e0af0a83"
@@ -44,6 +55,7 @@ __metadata:
   dependencies:
     "@alorel-personal/conventional-changelog-alorel": ^2.1.2
     "@alorel-personal/tslint-rules": ^5.0.7
+    "@alorel/rollup-plugin-clean": ^1.0.0
     "@alorel/rollup-plugin-dts": ^1.0.0
     "@rollup/plugin-typescript": ^4.1.1
     "@rollup/pluginutils": ^3.0.9
