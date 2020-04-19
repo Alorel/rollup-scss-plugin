@@ -1,7 +1,7 @@
 import typescript from '@rollup/plugin-typescript';
 import {join} from 'path';
 import {dependencies, peerDependencies} from './package.json';
-import cleanPlugin from './build/clean';
+import {cleanPlugin} from '@alorel/rollup-plugin-clean';
 import copyPkgJson from './build/copy-pkg-json';
 import {dtsPlugin as dts} from '@alorel/rollup-plugin-dts';
 import cpPlugin from './build/copy-plugin';
@@ -49,7 +49,9 @@ export default {
     exclude: 'node_modules/*'
   },
   plugins: [
-    cleanPlugin(),
+    cleanPlugin({
+      dir: join(__dirname, 'dist')
+    }),
     typescript({
       tsconfig: join(__dirname, 'tsconfig.json')
     })
