@@ -26,12 +26,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@alorel/rollup-plugin-dts@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@alorel/rollup-plugin-dts@npm:1.0.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40alorel%2Frollup-plugin-dts%2F1.0.0%2F3a5b7389845dce50890eb9d112b5d2bc2a134ccad5d13a5a6dc46327e0af0a83"
+  dependencies:
+    "@rollup/pluginutils": ^3.0.9
+  peerDependencies:
+    rollup: ^2.6.0 || ^1.30.0
+    typescript: ^3.5.0
+  checksum: 2/0b23ee0a4b4d05284a3219bbea14656f34c2a138cce802e5218fa8facbd93ed699cf54d8eb40d9fb257c8372bda860cf31e9067ff1282ea1a0eff47a09bc1d64
+  languageName: node
+  linkType: hard
+
 "@alorel/rollup-plugin-scss@workspace:.":
   version: 0.0.0-use.local
   resolution: "@alorel/rollup-plugin-scss@workspace:."
   dependencies:
     "@alorel-personal/conventional-changelog-alorel": ^2.1.2
     "@alorel-personal/tslint-rules": ^5.0.7
+    "@alorel/rollup-plugin-dts": ^1.0.0
     "@rollup/plugin-typescript": ^4.1.1
     "@rollup/pluginutils": ^3.0.9
     "@semantic-release/changelog": ^5.0.1
@@ -39,10 +52,8 @@ __metadata:
     "@semantic-release/git": ^9.0.0
     "@semantic-release/github": ^7.0.5
     "@semantic-release/npm": ^7.0.5
-    "@types/cross-spawn": ^6.0.1
     "@types/fs-extra": ^8.1.0
     "@types/node-sass": ^4.11.0
-    cross-spawn: ^7.0.2
     custom-tslint-formatters: ^2.4.0
     del: ^5.1.0
     fs-extra: ^9.0.0
@@ -430,15 +441,6 @@ __metadata:
   version: 1.1.1
   resolution: "@types/color-name@npm:1.1.1"
   checksum: 2/8311db94a9c4ecd247763b81e783ee49d87678b4ce6a7ee502e2bd5cea242b7357804a04855db009f713174bc654cc0c01c7303d40d757e5d710f5ac0368500f
-  languageName: node
-  linkType: hard
-
-"@types/cross-spawn@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "@types/cross-spawn@npm:6.0.1"
-  dependencies:
-    "@types/node": "*"
-  checksum: 2/85dbccbf3b528ac6273c1a75f90d55c195dfe4ae5f6a313eb5b23569d1a71514ba572eb38e6246ef14ee1cfeba80abf256e67c95d8d7ce192f82d5d6d1c042bf
   languageName: node
   linkType: hard
 
@@ -1492,7 +1494,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.2":
+"cross-spawn@npm:^7.0.0":
   version: 7.0.2
   resolution: "cross-spawn@npm:7.0.2"
   dependencies:

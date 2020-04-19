@@ -3,7 +3,7 @@ import {join} from 'path';
 import {dependencies, peerDependencies} from './package.json';
 import cleanPlugin from './build/clean';
 import copyPkgJson from './build/copy-pkg-json';
-import dts from './build/dts';
+import {dtsPlugin as dts} from '@alorel/rollup-plugin-dts';
 import cpPlugin from './build/copy-plugin';
 
 function mkOutput(overrides = {}) {
