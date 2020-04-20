@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Alorel/rollup-scss-plugin/compare/1.0.4...1.1.0) (2020-04-20)
+
+
+### Features
+
+* export importedBy prop ([](https://github.com/Alorel/rollup-scss-plugin/commit/f79b9a03a7264da6ddb02ced6ee4b49a73294dcf))
+
 ## [1.0.4](https://github.com/Alorel/rollup-scss-plugin/compare/1.0.3...1.0.4) (2020-04-20)
 
 
