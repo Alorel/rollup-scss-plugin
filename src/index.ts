@@ -13,10 +13,14 @@ export interface RollupSassOptions {
   sassOpts?: Omit<sass.Options, 'file' | 'data' | 'omitSourceMapUrl'>;
 }
 
+export interface RollupSassHookImportables {
+  [id: string]: string[] | null;
+}
+
 export interface RollupSassHook extends Omit<Plugin, 'name'> {
-  imports: {
-    [id: string]: string[] | null;
-  };
+  importedBy: RollupSassHookImportables;
+
+  imports: RollupSassHookImportables;
 
   name: 'rollup-plugin-scss';
 }
@@ -33,6 +37,7 @@ export function sassPlugin(opts?: RollupSassOptions): RollupSassHook {
   const runtime = new Runtime(sassOpts);
 
   return {
+    importedBy: runtime.importedBy,
     imports: runtime.imports,
     load(id) {
       if (!filter(id)) {

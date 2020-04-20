@@ -1,7 +1,7 @@
 import * as sass from 'node-sass';
 import {LoadResult, PluginContext, SourceDescription} from 'rollup';
 import {promisify} from 'util';
-import {RollupSassHook, RollupSassOptions} from './index';
+import {RollupSassHookImportables, RollupSassOptions} from './index';
 
 const render = promisify(sass.render);
 
@@ -22,10 +22,10 @@ interface CompileResult {
 /** @internal */
 export class Runtime {
   /** Keys are module IDs, values are modules that import them */
-  public readonly importedBy: RollupSassHook['imports'] = {};
+  public readonly importedBy: RollupSassHookImportables = {};
 
   /** Keys are module IDs, values are modules they import */
-  public readonly imports: RollupSassHook['imports'] = {};
+  public readonly imports: RollupSassHookImportables = {};
 
   private readonly compileCache: { [id: string]: CompileResult | null } = {};
 
