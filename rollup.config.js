@@ -10,7 +10,7 @@ function mkOutput(overrides = {}) {
   return {
     dir: join(__dirname, 'dist'),
     assetFileNames: '[name][extname]',
-    sourcemap: true,
+    sourcemap: false,
     ...overrides
   };
 }
