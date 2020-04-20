@@ -1,3 +1,18 @@
+## [1.0.4](https://github.com/Alorel/rollup-scss-plugin/compare/1.0.3...1.0.4) (2020-04-20)
+
+
+### Bug Fixes
+
+* no longer generate & bundle source maps ([](https://github.com/Alorel/rollup-scss-plugin/commit/89456443127ce9decc638519571559451938ee67))
+
+
+### Maintenance
+
+* add missing types/node package ([](https://github.com/Alorel/rollup-scss-plugin/commit/46da87c117ce62203c9dbbbb5ca66b8d6e6ee23f))
+* update dev deps ([](https://github.com/Alorel/rollup-scss-plugin/commit/68108e24f63203beecd07629f188de9d98c0868d))
+* Use clean plugin ([](https://github.com/Alorel/rollup-scss-plugin/commit/775121237557ef5fedf098d07979efd75bef0b1e))
+* Use dts plugin ([](https://github.com/Alorel/rollup-scss-plugin/commit/884b11f437ed2909eddfbb9e75816fbf48e3c8a8))
+
 ## [1.0.3](https://github.com/Alorel/rollup-scss-plugin/compare/1.0.2...1.0.3) (2020-04-18)
 
 

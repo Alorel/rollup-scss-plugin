@@ -1,6 +1,6 @@
 {
   "name": "@alorel/rollup-plugin-scss",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Loads SCSS files",
   "main": "index.cjs.js",
   "module": "index.es.js",
