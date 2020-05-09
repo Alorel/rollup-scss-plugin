@@ -47,7 +47,8 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^3.0.9",
-    "@types/node-sass": "^4.11.0"
+    "@types/node-sass": "^4.11.0",
+    "magic-string": "^0.25.7"
   },
   "publishConfig": {
     "access": "public",

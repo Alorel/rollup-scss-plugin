@@ -27,6 +27,8 @@ export class Runtime {
   /** Keys are module IDs, values are modules they import */
   public readonly imports: RollupSassHookImportables = {};
 
+  public mapsEnabled = false;
+
   private readonly compileCache: { [id: string]: CompileResult | null } = {};
 
   public constructor(private readonly sassOpts?: RollupSassOptions['sassOpts']) {
@@ -121,6 +123,7 @@ export class Runtime {
       result.stats.entry = formatWindowsPath(result.stats.entry);
       result.stats.includedFiles = result.stats.includedFiles.map(formatWindowsPath);
     }
+    this.mapsEnabled = !!map;
     const imports = result.stats.includedFiles
       .filter(f => f !== result.stats.entry);
 
