@@ -1,4 +1,4 @@
-import typescript from '@rollup/plugin-typescript';
+import typescript from 'rollup-plugin-typescript2';
 import {join} from 'path';
 import {dependencies, peerDependencies} from './package.json';
 import {cleanPlugin} from '@alorel/rollup-plugin-clean';
@@ -47,9 +47,7 @@ export default {
     cleanPlugin({
       dir: join(__dirname, 'dist')
     }),
-    typescript({
-      tsconfig: join(__dirname, 'tsconfig.json')
-    }),
+    typescript(),
     cpPlugin({
       defaultOpts: {
         glob: {
