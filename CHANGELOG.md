@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Alorel/rollup-scss-plugin/compare/1.2.0...1.2.1) (2020-05-09)
+
+
+### Bug Fixes
+
+* Plugin shouldn't error on removed files anymore ([7149162](https://github.com/Alorel/rollup-scss-plugin/commit/714916224925a0383fc8542d583538896a7f1b41))
+
 # [1.2.0](https://github.com/Alorel/rollup-scss-plugin/compare/1.1.0...1.2.0) (2020-05-09)
 
 
