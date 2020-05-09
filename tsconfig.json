@@ -12,6 +12,7 @@
     "noUnusedLocals": true,
     "downlevelIteration": true,
     "module": "esnext",
+    "moduleResolution": "node",
     "emitDecoratorMetadata": false,
     "experimentalDecorators": true,
     "strictNullChecks": true,
