@@ -107,14 +107,13 @@ export function sassPlugin(opts?: RollupSassOptions): RollupSassHook {
       let hasMatch = false;
 
       for (const [search, id] of Object.entries(emittedMetas)) {
-        const filename: string = this.getFileName(id);
         let idx = 0;
         do {
           idx = code.indexOf(search, idx);
           if (idx === -1) {
             break;
           }
-          ms.overwrite(idx, idx + search.length, baseUrl + filename);
+          ms.overwrite(idx, idx + search.length, baseUrl + this.getFileName(id));
           hasMatch = true;
           idx++;
         } while (true);
