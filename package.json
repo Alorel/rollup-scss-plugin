@@ -51,6 +51,6 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://npm.pkg.github.com/alorel"
+    "registry": "https://npm.pkg.github.com"
   }
 }

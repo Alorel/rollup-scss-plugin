@@ -37,7 +37,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-          registry-url: https://npm.pkg.github.com/alorel
+          registry-url: https://npm.pkg.github.com
       - run: npm install -g yarn@^2.0.0-rc.27
       - run: yarn install --immutable
         env:
