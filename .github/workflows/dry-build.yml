@@ -14,6 +14,7 @@ jobs:
           - macos-latest
           - ubuntu-latest
         node:
+          - 14.x
           - 13.x
           - 12.x
     steps:
@@ -44,7 +45,7 @@ jobs:
           YARN_ENABLE_GLOBAL_CACHE: 'false'
           YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn run lint
-        if: ${{ matrix.node == '13.x' && matrix.os == 'ubuntu-latest'}}
+        if: ${{ matrix.node == '14.x' && matrix.os == 'ubuntu-latest'}}
       - uses: nelonoel/branch-name@v1
       - name: Release (Linux/OSX)
         if: ${{ matrix.os != 'windows-latest' }}
