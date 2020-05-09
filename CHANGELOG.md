@@ -1,3 +1,16 @@
+# [1.2.0](https://github.com/Alorel/rollup-scss-plugin/compare/1.1.0...1.2.0) (2020-05-09)
+
+
+### Features
+
+* Add support for URLs ([e4d84e8](https://github.com/Alorel/rollup-scss-plugin/commit/e4d84e8ef0fa9c216fce9e148254baf36b78673e))
+
+
+### Maintenance
+
+* Tweak registry url ([a000a54](https://github.com/Alorel/rollup-scss-plugin/commit/a000a54d80807cb57af5c68e6dd759ee1a8782af))
+* Update dependencies ([e5a3d51](https://github.com/Alorel/rollup-scss-plugin/commit/e5a3d51aff61bed05a677e1b87c4578dce2f8e17))
+
 # [1.1.0](https://github.com/Alorel/rollup-scss-plugin/compare/1.0.4...1.1.0) (2020-04-20)
 
 
