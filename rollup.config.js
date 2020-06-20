@@ -15,7 +15,9 @@ function mkOutput(overrides = {}) {
   };
 }
 
-export default {
+const isTruthy = v => !!v;
+
+export default ({watch}) => ({
   input: join(__dirname, 'src', 'index.ts'),
   external: Array.from(
     new Set(
@@ -28,12 +30,14 @@ export default {
     mkOutput({
       entryFileNames: '[name].cjs.js',
       format: 'cjs',
-      plugins: [
-        copyPkgJson({
-          unsetPaths: ['devDependencies', 'scripts']
-        }),
-        dts()
-      ]
+      ...(watch ? {} : {
+        plugins: [
+          copyPkgJson({
+            unsetPaths: ['devDependencies', 'scripts']
+          }),
+          dts()
+        ]
+      })
     }),
     mkOutput({
       entryFileNames: '[name].es.js',
@@ -48,7 +52,7 @@ export default {
       dir: join(__dirname, 'dist')
     }),
     typescript(),
-    cpPlugin({
+    !watch && cpPlugin({
       defaultOpts: {
         glob: {
           cwd: __dirname
@@ -61,5 +65,5 @@ export default {
         'README.md'
       ]
     })
-  ]
-}
+  ].filter(isTruthy)
+});
