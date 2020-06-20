@@ -10,15 +10,12 @@ jobs:
     strategy:
       matrix:
         os:
-          - windows-latest
-          - macos-latest
           - ubuntu-latest
         node:
           - 14.x
-          - 13.x
-          - 12.x
     steps:
       - uses: actions/checkout@v2
+        name: Checkout
         with:
           fetch-depth: 100
       - name: Cache yarn
@@ -36,24 +33,29 @@ jobs:
           restore-keys: |
             v2-${{ matrix.os }}-${{ matrix.node }}-refs/heads/master-node_modules
       - uses: actions/setup-node@v1
+        name: Set up Node
         with:
           node-version: ${{ matrix.node }}
           registry-url: https://npm.pkg.github.com
       - run: npm install -g yarn@^2.0.0-rc.27
+        name: Install Yarn
       - run: yarn install --immutable
+        name: Install dependencies
         env:
           YARN_ENABLE_GLOBAL_CACHE: 'false'
           YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn run lint
-        if: ${{ matrix.node == '14.x' && matrix.os == 'ubuntu-latest'}}
+        name: Lint
       - uses: nelonoel/branch-name@v1
-      - name: Release (Linux/OSX)
+        name: Get branch name
+        if: ${{ matrix.os != 'windows-latest' }}
+      - name: Dry release
         if: ${{ matrix.os != 'windows-latest' }}
         run: yarn run release --dry-run --branches ${BRANCH_NAME}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build (Windows)
+      - name: Standard build
         if: ${{ matrix.os == 'windows-latest' }}
         run: yarn run rollup
