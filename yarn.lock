@@ -85,26 +85,26 @@ __metadata:
     "@alorel/rollup-plugin-copy": ^1.0.1
     "@alorel/rollup-plugin-copy-pkg-json": ^1.0.3
     "@alorel/rollup-plugin-dts": ^2.0.0
-    "@rollup/pluginutils": ^3.0.10
+    "@rollup/pluginutils": ^3.1.0
     "@semantic-release/changelog": ^5.0.1
     "@semantic-release/exec": ^5.0.0
     "@semantic-release/git": ^9.0.0
-    "@semantic-release/github": ^7.0.5
+    "@semantic-release/github": ^7.0.7
     "@semantic-release/npm": ^7.0.5
-    "@types/fs-extra": ^8.1.0
-    "@types/node": ^13.13.5
+    "@types/fs-extra": ^9.0.1
+    "@types/node": ^14.0.13
     "@types/node-sass": ^4.11.0
     custom-tslint-formatters: ^2.4.0
     del: ^5.1.0
-    fs-extra: ^9.0.0
+    fs-extra: ^9.0.1
     magic-string: ^0.25.7
     node-sass: ^4.14.1
-    rollup: ^2.8.2
-    rollup-plugin-typescript2: ^0.27.0
-    semantic-release: ^17.0.7
-    tslib: ^1.11.2
+    rollup: ^2.17.1
+    rollup-plugin-typescript2: ^0.27.1
+    semantic-release: ^17.0.8
+    tslib: ^2.0.0
     tslint: ^6.1.2
-    typescript: ^3.8.3
+    typescript: ^3.9.5
   peerDependencies:
     node-sass: ^4.0.0
     rollup: ^2.6.0 || ^1.30.0
@@ -304,7 +304,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/pluginutils@npm:^3.0.10, @rollup/pluginutils@npm:^3.0.8":
+"@rollup/pluginutils@npm:^3.0.8":
   version: 3.0.10
   resolution: "@rollup/pluginutils@npm:3.0.10"
   dependencies:
@@ -314,6 +314,19 @@ __metadata:
   peerDependencies:
     rollup: ^1.20.0||^2.0.0
   checksum: 2/6fe0b0c1cd0b512736dcb5dbaa168c8dead83183e27f9ccc1450dbacbdf11803249b75eeca8ff0d6cd1af6d099e0bd6896d05b2e217f167d9cb3765cfb890580
+  languageName: node
+  linkType: hard
+
+"@rollup/pluginutils@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@rollup/pluginutils@npm:3.1.0"
+  dependencies:
+    "@types/estree": 0.0.39
+    estree-walker: ^1.0.1
+    picomatch: ^2.2.2
+  peerDependencies:
+    rollup: ^1.20.0||^2.0.0
+  checksum: 2/45da6411e045d1b034242a8144f4a5e8c02ff1b68a2e0857807f5bb4b091c416f2015e075057f0f0dec200e7b35efe6ed4e301b43e365cedea09192f01a6839b
   languageName: node
   linkType: hard
 
@@ -389,7 +402,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/github@npm:^7.0.0, @semantic-release/github@npm:^7.0.5":
+"@semantic-release/github@npm:^7.0.0":
   version: 7.0.5
   resolution: "@semantic-release/github@npm:7.0.5"
   dependencies:
@@ -412,6 +425,32 @@ __metadata:
   peerDependencies:
     semantic-release: ">=16.0.0 <18.0.0"
   checksum: 2/16312cb196c68fc676528bcb0b81696d81144fc181bc293f3a0d9bcbb931a5e0bf807594538063679ba05a45108be4e7498e8680999a817e2d3d442779d82d80
+  languageName: node
+  linkType: hard
+
+"@semantic-release/github@npm:^7.0.7":
+  version: 7.0.7
+  resolution: "@semantic-release/github@npm:7.0.7"
+  dependencies:
+    "@octokit/rest": ^17.0.0
+    "@semantic-release/error": ^2.2.0
+    aggregate-error: ^3.0.0
+    bottleneck: ^2.18.1
+    debug: ^4.0.0
+    dir-glob: ^3.0.0
+    fs-extra: ^9.0.0
+    globby: ^11.0.0
+    http-proxy-agent: ^4.0.0
+    https-proxy-agent: ^5.0.0
+    issue-parser: ^6.0.0
+    lodash: ^4.17.4
+    mime: ^2.4.3
+    p-filter: ^2.0.0
+    p-retry: ^4.0.0
+    url-join: ^4.0.0
+  peerDependencies:
+    semantic-release: ">=16.0.0 <18.0.0"
+  checksum: 2/7c73fbf202a6840771d68c2d364e2a5cbb6b20a36154dcba32934ca743e2f71f6420133ec7888dade88b8af8ee02d2f2b9ff04e01d90abc865f89a07f656c90f
   languageName: node
   linkType: hard
 
@@ -486,12 +525,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/fs-extra@npm:^8.1.0":
-  version: 8.1.0
-  resolution: "@types/fs-extra@npm:8.1.0"
+"@types/fs-extra@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "@types/fs-extra@npm:9.0.1"
   dependencies:
     "@types/node": "*"
-  checksum: 2/53b1daf72ab73b2d4cb9801e5d73a3fd2d3f8758b52815a6eca6ccfa18d307c17fe7a361865264dc96f5de5a905672cd999d8ac68ef49690266e3e6a10ab3cff
+  checksum: 2/a7c0f7373620b5045fb5fc6ccc28c8752a08f93c03127036e292cfa35bf123bd2cdbe534aaac5800a8383af37490c8b8d1192361ea24a4c7e4177ebe97c3b429
   languageName: node
   linkType: hard
 
@@ -529,10 +568,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^13.13.5":
-  version: 13.13.5
-  resolution: "@types/node@npm:13.13.5"
-  checksum: 2/101f43e900e7df94bf5f8c1a6d5caec16d94e545177e59f7ab6f97c925137377abd9af2cc87d7873c7b9a532c7f38840562d8f2726786e33efa9afa17644f6e4
+"@types/node@npm:^14.0.13":
+  version: 14.0.13
+  resolution: "@types/node@npm:14.0.13"
+  checksum: 2/2f2be6f7f1a916b0f4d58949bd934a8e41c0dcb15c493c17c3eaf78da3065c09650030f0dfe2e8c11880d597ee001d7cd925129218037fdb4432e80f7d895673
   languageName: node
   linkType: hard
 
@@ -2267,6 +2306,18 @@ __metadata:
     jsonfile: ^6.0.1
     universalify: ^1.0.0
   checksum: 2/518828d6e5c33d71cb075f3c25629f857b4a0d1fca5c3b6c8cdee876fa972e0661003491fc7d49d9e4d1c19aec8af6edf045e849a1110f2f879880975f4f6955
+  languageName: node
+  linkType: hard
+
+"fs-extra@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "fs-extra@npm:9.0.1"
+  dependencies:
+    at-least-node: ^1.0.0
+    graceful-fs: ^4.2.0
+    jsonfile: ^6.0.1
+    universalify: ^1.0.0
+  checksum: 2/b7374cb05819bd95fa15bf74a30fbec3d2b64a0c00d2df67d6e1d6a901a9a7582a1243fe652d27a6cd042b38a2c1cd9ae3b3d100bc98dd041cc2f3e29964884f
   languageName: node
   linkType: hard
 
@@ -5755,25 +5806,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup-plugin-typescript2@npm:^0.27.0":
-  version: 0.27.0
-  resolution: "rollup-plugin-typescript2@npm:0.27.0"
+"rollup-plugin-typescript2@npm:^0.27.1":
+  version: 0.27.1
+  resolution: "rollup-plugin-typescript2@npm:0.27.1"
   dependencies:
     "@rollup/pluginutils": ^3.0.8
     find-cache-dir: ^3.3.1
     fs-extra: 8.1.0
     resolve: 1.15.1
-    tslib: 1.11.1
+    tslib: 1.11.2
   peerDependencies:
     rollup: ">=1.26.3"
     typescript: ">=2.4.0"
-  checksum: 2/2d92604357fe0fc8806276b388ea1900c76b8a0fdcd1ad5d69ac9bda453f51cd3cd9da0c65a539784f6fc9d6d808a70892943d2b8b1c884948777d0c946c5498
+  checksum: 2/5d16047042af004fa78774a916d98bfda176c0d9d746a2e083ad5d25ea1e3a6b53212d2bdba5a3717466e7d6fb2db9d8d84bb08851ad2776e4a99768d3a3954f
   languageName: node
   linkType: hard
 
-"rollup@npm:^2.8.2":
-  version: 2.8.2
-  resolution: "rollup@npm:2.8.2"
+"rollup@npm:^2.17.1":
+  version: 2.17.1
+  resolution: "rollup@npm:2.17.1"
   dependencies:
     fsevents: ~2.1.2
   dependenciesMeta:
@@ -5781,7 +5832,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 2/22cb6ecb5c5c4ba5c7a13eca33de4bac21811a2767857059bcc0d08d117a98f4fc9d69433ce44e7c441ed5560aa20bc60a5fa72bc8a83fcbdca0faa02f4291f9
+  checksum: 2/e43f9387e9297c7f00c6867e8d9547bf53a01642874745f7a2ddd61ca1a721b9ae5e94eae7b6da874dcae899c4f4dfd0fd45e5695d92a0e0d6d873262ccd3bb9
   languageName: node
   linkType: hard
 
@@ -5846,9 +5897,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:17.0.7, semantic-release@npm:^17.0.7":
-  version: 17.0.7
-  resolution: "semantic-release@npm:17.0.7"
+"semantic-release@npm:17.0.8, semantic-release@npm:^17.0.8":
+  version: 17.0.8
+  resolution: "semantic-release@npm:17.0.8"
   dependencies:
     "@semantic-release/commit-analyzer": ^8.0.0
     "@semantic-release/error": ^2.2.0
@@ -5880,7 +5931,7 @@ __metadata:
     yargs: ^15.0.1
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: 2/3ae7f88cc035c94e36cdf512705825e0965ec64d3fbcae743e113fb43b785b8ffc2de2af3a31700c5288e2baa3968e809e59bc8319a1e683c675f8a5838d9745
+  checksum: 2/a4062d62d7ab752d5ae690fe2c3effa7372e067aa82b9bbc17a5aeb51b553e9ef7daf12a9eecf54069c26e4574904609831c0b569763488bbb9d0a601632b0bd
   languageName: node
   linkType: hard
 
@@ -6673,17 +6724,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:1.11.1, tslib@npm:^1.10.0, tslib@npm:^1.8.0, tslib@npm:^1.8.1":
+"tslib@npm:1.11.2":
+  version: 1.11.2
+  resolution: "tslib@npm:1.11.2"
+  checksum: 2/9465e3dd4e348757bef369934c73990193cf069c13d487e566b1ce7802bd7e6ab7d5dc16ac97b31d076d29d8bfc4f358457ce4040ec97b9a1e9b3fa6cf1ded7a
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^1.10.0, tslib@npm:^1.8.0, tslib@npm:^1.8.1":
   version: 1.11.1
   resolution: "tslib@npm:1.11.1"
   checksum: 2/d40eba08de267b2d3c458ddbf51f9010a45b8e752d3bf8c0fed63e266afc9277c6a26e65e51223335b8753f9f106aeb600e704f2a6eae05729160671a97c52e7
   languageName: node
   linkType: hard
 
-"tslib@npm:^1.11.2":
-  version: 1.11.2
-  resolution: "tslib@npm:1.11.2"
-  checksum: 2/9465e3dd4e348757bef369934c73990193cf069c13d487e566b1ce7802bd7e6ab7d5dc16ac97b31d076d29d8bfc4f358457ce4040ec97b9a1e9b3fa6cf1ded7a
+"tslib@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "tslib@npm:2.0.0"
+  checksum: 2/a7369a224f12e223fb42f2a720389601a24a1e1c96c55bf0d8d4b60c131e574c175ae23578b8d1bd3f4ec790c7e0a82b43733f022f866d48a23aeadd3910755d
   languageName: node
   linkType: hard
 
@@ -6813,13 +6871,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:>=2.2.0 <4.0.0, typescript@npm:^3.8.3":
+"typescript@npm:>=2.2.0 <4.0.0":
   version: 3.8.3
   resolution: "typescript@npm:3.8.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 2/519b11576247fe3570d89a2aa757d8f666aafc0cb9465a6cdd4df09c1dc6bf7285f0c6008d2ac7a55ea26457e767aaab819f58439d80af2cce1d9805b2be1034
+  languageName: node
+  linkType: hard
+
+"typescript@npm:^3.9.5":
+  version: 3.9.5
+  resolution: "typescript@npm:3.9.5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 2/15618435493667083eb43dc7b36c4d3dd47fd9e9c8a14f0ac4019bbf6124b6cc518b6ed506400913db1bf50831207ee8201b5d827680076930b562923f4f18a0
   languageName: node
   linkType: hard
 
