@@ -1,0 +1,30 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Force the following filetypes to have unix eols, so Windows does not break them
+*.* text eol=lf
+
+# These files are text and should be normalized (Convert crlf => lf)
+.browserlistrc text
+*.js text
+*.jsx text
+*.ts text
+*.tsx text
+*.yml text
+*.yaml text
+*.toml text
+*.pug text
+yarn.lock text
+*.md text
+*.scss text
+*.sass text
+*.css text
+*.less text
+*.json text
+*.json5 text
+
+*.ico binary
+*.png binary
+*.gif binary
+*.gz binary
+*.tgz binary
