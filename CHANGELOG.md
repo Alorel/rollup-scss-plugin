@@ -1,3 +1,16 @@
+## [1.2.2](https://github.com/Alorel/rollup-scss-plugin/compare/1.2.1...1.2.2) (2020-06-20)
+
+
+### Bug Fixes
+
+* Improved runtime performance & dependency tracking ([abf8e85](https://github.com/Alorel/rollup-scss-plugin/commit/abf8e85a944831e8749635ca2804f52aa24ab2a8))
+
+
+### Maintenance
+
+* Add gitattributes ([66e99c6](https://github.com/Alorel/rollup-scss-plugin/commit/66e99c6c502d41439649fdd0b3083d9ee20477e1))
+* Update dependencies ([605935a](https://github.com/Alorel/rollup-scss-plugin/commit/605935aea898cbfdc83e6feafad28be40a3fa766))
+
 ## [1.2.1](https://github.com/Alorel/rollup-scss-plugin/compare/1.2.0...1.2.1) (2020-05-09)
 
 
