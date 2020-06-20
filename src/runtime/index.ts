@@ -1,17 +1,12 @@
+import {BoundClass, BoundMethod} from '@aloreljs/bound-decorator';
 import * as sass from 'node-sass';
-import {LoadResult, PluginContext, SourceDescription} from 'rollup';
+import type {LoadResult, PluginContext, SourceDescription} from 'rollup';
 import {promisify} from 'util';
-import {RollupSassHookImportables, RollupSassOptions} from './index';
+import type {RollupSassHookImportables, RollupSassOptions} from '../index';
+import {filterNoLongerImports} from './filterNoLongerImports';
+import {postprocessForWindows} from './postprocessForWindows';
 
 const render = promisify(sass.render);
-
-// Sass replaces backslashes with forward slashes
-const isWindows = process.platform === 'win32';
-const formatWindowsPath: (id: string) => string = (() => {
-  const reg = /\//g;
-
-  return (id: string) => id.replace(reg, '\\');
-})();
 
 interface CompileResult {
   imports: string[];
@@ -20,6 +15,7 @@ interface CompileResult {
 }
 
 /** @internal */
+@BoundClass()
 export class Runtime {
   /** Keys are module IDs, values are modules that import them */
   public readonly importedBy: RollupSassHookImportables = {};
@@ -27,17 +23,24 @@ export class Runtime {
   /** Keys are module IDs, values are modules they import */
   public readonly imports: RollupSassHookImportables = {};
 
+  /** Whether sourcemaps are enabled or not */
   public mapsEnabled = false;
 
   private readonly compileCache: { [id: string]: CompileResult | null } = {};
 
   public constructor(private readonly sassOpts?: RollupSassOptions['sassOpts']) {
-    this.toCompileResult = this.toCompileResult.bind(this);
   }
 
   public invalidate(id: string): void {
     if (this.compileCache[id]) {
       this.compileCache[id] = null;
+    }
+    if (this.importedBy[id]) {
+      for (const importer of this.importedBy[id]!) {
+        this.invalidate(importer);
+      }
+
+      this.importedBy[id] = null;
     }
   }
 
@@ -62,7 +65,7 @@ export class Runtime {
 
     return render(renderOpts)
       .then(this.toCompileResult) //tslint:disable-line:no-unbound-method
-      .then((result: CompileResult): LoadResult => {
+      .then<LoadResult>(result => {
         for (const removedId of this.getRemovedImports(id, result.imports)) {
           this.noLongerImports(id, removedId);
         }
@@ -70,20 +73,12 @@ export class Runtime {
         if (result.imports.length) {
           this.processCompiledImports(id, ctx, result.imports);
           this.imports[id] = result.imports;
-        } else {
+        } else if (this.imports[id]) {
           this.imports[id] = null;
         }
 
         return result.rollupResponse;
       });
-  }
-
-  private filterNoLongerImports(objName: 'imports' | 'importedBy', checkId: string, removeId: string): void {
-    const obj = this[objName];
-    if (obj[checkId]) {
-      const filtered = obj[checkId]!.filter(i => i !== removeId);
-      obj[checkId] = filtered.length ? filtered : null;
-    }
   }
 
   private getRemovedImports(id: string, newImports: string[]): string[] {
@@ -102,8 +97,8 @@ export class Runtime {
   }
 
   private noLongerImports(importingId: string, importedId: string): void {
-    this.filterNoLongerImports('imports', importingId, importedId);
-    this.filterNoLongerImports('importedBy', importedId, importingId);
+    filterNoLongerImports(this.imports, importingId, importedId);
+    filterNoLongerImports(this.importedBy, importedId, importingId);
   }
 
   private processCompiledImports(id: string, ctx: PluginContext, imports: string[]): void {
@@ -116,13 +111,11 @@ export class Runtime {
     }
   }
 
+  @BoundMethod()
   private toCompileResult(result: sass.Result): CompileResult {
     const code = result.css.toString('utf8');
     const map: SourceDescription['map'] = result.map ? JSON.parse(result.map.toString('utf8')) : null;
-    if (isWindows) {
-      result.stats.entry = formatWindowsPath(result.stats.entry);
-      result.stats.includedFiles = result.stats.includedFiles.map(formatWindowsPath);
-    }
+    postprocessForWindows(result);
     this.mapsEnabled = !!map;
     const imports = result.stats.includedFiles
       .filter(f => f !== result.stats.entry);
